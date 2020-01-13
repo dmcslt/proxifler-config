@@ -2,8 +2,8 @@
 <ProxifierProfile version="101" platform="Windows" product_id="0" product_minver="310">
   <Options>
     <Resolve>
-      <AutoModeDetection enabled="true" />
-      <ViaProxy enabled="false">
+      <AutoModeDetection enabled="false" />
+      <ViaProxy enabled="true">
         <TryLocalDnsFirst enabled="false" />
       </ViaProxy>
       <ExclusionList>%ComputerName%; localhost; *.local</ExclusionList>
@@ -31,26 +31,26 @@
       <Action type="Direct" />
     </Rule>
     <Rule enabled="true">
-      <Name>新建</Name>
+      <Name>shadows</Name>
       <Applications>shadowsocksr-dotnet2.0.exe; shadowsocksr-dotnet4.0.exe</Applications>
       <Action type="Direct" />
     </Rule>
     <Rule enabled="true">
       <Name>dev</Name>
-      <Targets>*.github.com; github-cloud.s3.amazonaws.com; *.githubusercontent.com; *.github.io</Targets>
+      <Targets>*.github.com; github-cloud.s3.amazonaws.com; *.githubusercontent.com; *.github.io;plugins.jetbrains.com;
+*.vagrantup.com</Targets>
       <Ports>443;80</Ports>
       <Action type="Proxy">100</Action>
     </Rule>
     <Rule enabled="true">
-      <Name>private-ip</Name>
+      <Name>localhost-ip</Name>
       <Targets>10.0.0.0 - 10.255.255.255; 172.16.0.0 - 172.31.255.255; 192.168.0.0 - 192.168.255.255;
 fc00:: - fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff;</Targets>
       <Action type="Direct" />
     </Rule>
-    <Rule enabled="true">
+    <Rule enabled="false">
       <Name>google</Name>
       <Targets>*.google.com; *.gstatic.com; *.googleusercontent.com; *.googleapis.com</Targets>
-      <Ports>443;80</Ports>
       <Action type="Proxy">100</Action>
     </Rule>
     <Rule enabled="true">
